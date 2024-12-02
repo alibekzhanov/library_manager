@@ -1,0 +1,28 @@
+import $ from 'jquery';
+import 'magnific-popup';
+
+$(document).ready(() => {
+    $('#add-book').magnificPopup({
+        items: {
+            src: '#add-book-modal',
+            type: 'inline'
+        },
+        closeBtnInside: true
+    });
+
+    // Пример добавления книги
+    $('#add-book-form').on('submit', (e) => {
+        e.preventDefault();
+        const name = $('#book-name').val();
+        const author = $('#book-author').val();
+        const year = $('#book-year').val();
+        const count = $('#book-count').val();
+
+        if (name && author && year > 0 && count > 0) {
+            addBook(name, author, year, count);
+            $.magnificPopup.close();
+        } else {
+            alert('Заполните все поля корректно!');
+        }
+    });
+});

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" data-tab="books">Books</a></li>
+                <li><a href="#" data-tab="visitors">Visitors</a></li>
+                <li><a href="#" data-tab="cards">Cards</a></li>
+                <li><a href="#" data-tab="statistics">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tab-content active">
+            <h1>Books</h1>
+            <div id="books-container"></div>
+            <button id="add-book">Add Book</button>
+        </section>
+        <section id="visitors" class="tab-content">
+            <h1>Visitors</h1>
+            <div id="visitors-container"></div>
+        </section>
+        <section id="cards" class="tab-content">
+            <h1>Cards</h1>
+            <div id="cards-container"></div>
+        </section>
+        <section id="statistics" class="tab-content">
+            <h1>Statistics</h1>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h1>Add New Book</h1>
+            <form id="add-book-form">
+                <input type="text" id="book-name" placeholder="Name" required>
+                <input type="text" id="book-author" placeholder="Author" required>
+                <input type="number" id="book-year" placeholder="Year" required>
+                <input type="number" id="book-count" placeholder="Count" required>
+                <button type="submit">Add Book</button>
+                <button type="button" id="close-modal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
